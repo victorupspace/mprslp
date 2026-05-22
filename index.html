@@ -112,6 +112,7 @@
       .topbar__inner {
         align-items: center;
         display: flex;
+        gap: var(--space-16);
         justify-content: space-between;
         max-width: var(--container);
         width: 100%;
@@ -122,6 +123,7 @@
         display: flex;
         gap: var(--space-16);
         min-width: 0;
+        overflow: hidden;
       }
 
       .brand__mark {
@@ -162,9 +164,10 @@
         border-radius: var(--radius-full);
         color: var(--color-brand);
         display: inline-flex;
+        flex: 0 0 auto;
         font-size: 12px;
         font-weight: 700;
-        gap: var(--space-8);
+        gap: var(--space-6);
         letter-spacing: 1.2px;
         line-height: 1;
         padding: var(--space-8) var(--space-12);
@@ -176,8 +179,14 @@
         background: var(--color-brand);
         border-radius: var(--radius-full);
         content: "";
+        flex: 0 0 auto;
         height: 6px;
         width: 6px;
+      }
+
+      .release__suffix {
+        color: var(--color-brand);
+        opacity: 0.72;
       }
 
       .section {
@@ -657,8 +666,16 @@
           height: 64px;
         }
 
+        .topbar__inner {
+          gap: var(--space-12);
+        }
+
+        .brand {
+          gap: var(--space-10);
+        }
+
         .brand__logo {
-          height: 30px;
+          height: 28px;
         }
 
         .brand__divider {
@@ -670,8 +687,14 @@
         }
 
         .release {
-          font-size: 11px;
-          letter-spacing: 1px;
+          font-size: 10px;
+          gap: var(--space-6);
+          letter-spacing: 0.6px;
+          padding: var(--space-6) var(--space-10);
+        }
+
+        .release__suffix {
+          display: none;
         }
 
         .hero h1 {
@@ -738,6 +761,12 @@
           font-size: 15px;
         }
       }
+
+      @media (max-width: 420px) {
+        .brand__product {
+          display: none;
+        }
+      }
     </style>
   </head>
   <body>
@@ -750,7 +779,10 @@
           <span class="brand__divider" aria-hidden="true"></span>
           <span class="brand__product">Design <strong>System</strong></span>
         </a>
-        <div class="release">Versão 0.1 — Primeira release</div>
+        <div class="release">
+          <span class="release__version">Versão 1.0</span>
+    
+        </div>
       </div>
     </header>
 
@@ -779,7 +811,7 @@
               <img src="mprs.png" alt="Fachada do Ministério Público do Rio Grande do Sul">
             </div>
             <span class="hero-visual__corner" aria-hidden="true"></span>
-            <span class="hero-visual__tag" aria-hidden="true">Identidade institucional</span>
+            <span class="hero-visual__tag" aria-hidden="true">Biblioteca de componentes</span>
           </div>
         </div>
       </section>
